@@ -1,0 +1,15 @@
+{
+  "name": "xiayue",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "npm --workspace @xiayue/web run dev",
+    "dev:api": "npm --workspace @xiayue/api run dev",
+    "dev:bridge": "npm --workspace @xiayue/agent-bridge run dev",
+    "build": "npm run -ws build"
+  }
+}

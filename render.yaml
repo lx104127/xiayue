@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: xiayue-api
+    env: node
+    rootDir: .
+    plan: starter
+    buildCommand: npm install && npm --workspace @xiayue/api run build
+    startCommand: npm --workspace @xiayue/api run start
+    envVars:
+      - key: NODE_VERSION
+        value: 22.22.0
+      - key: PORT
+        value: 3100
+      - key: JWT_SECRET
+        generateValue: true
+
+  - type: web
+    name: xiayue-agent-bridge
+    env: node
+    rootDir: .
+    plan: starter
+    buildCommand: npm install && npm --workspace @xiayue/agent-bridge run build
+    startCommand: npm --workspace @xiayue/agent-bridge run start
+    envVars:
+      - key: NODE_VERSION
+        value: 22.22.0
+      - key: PORT
+        value: 3101
